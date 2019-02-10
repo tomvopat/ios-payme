@@ -1,0 +1,38 @@
+PODS:
+  - CodableFirebase (0.2.1)
+  - FirebaseCore (5.1.5):
+    - GoogleUtilities/Logger (~> 5.2)
+  - FirebaseDatabase (5.0.3):
+    - FirebaseCore (~> 5.0)
+    - leveldb-library (~> 1.18)
+  - GoogleUtilities/Environment (5.3.4)
+  - GoogleUtilities/Logger (5.3.4):
+    - GoogleUtilities/Environment
+  - leveldb-library (1.20)
+  - SnapKit (4.2.0)
+
+DEPENDENCIES:
+  - CodableFirebase (~> 0.2)
+  - FirebaseDatabase (~> 5.0)
+  - SnapKit (~> 4.2)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CodableFirebase
+    - FirebaseCore
+    - FirebaseDatabase
+    - GoogleUtilities
+    - leveldb-library
+    - SnapKit
+
+SPEC CHECKSUMS:
+  CodableFirebase: 0bf201991eeec35eb9fcd987d271ea463cf34a80
+  FirebaseCore: c6079de64c1a87000e52e9b408dddcadc901177f
+  FirebaseDatabase: e2bcbc106adc4b11a2da3ec2eb63c0c4a44f2f54
+  GoogleUtilities: abb092d2c12e817fa3e0e7b274987dd72fb86ec3
+  leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+
+PODFILE CHECKSUM: 4c8405d4a16100e4020983a3612a5000797fd030
+
+COCOAPODS: 1.5.3
