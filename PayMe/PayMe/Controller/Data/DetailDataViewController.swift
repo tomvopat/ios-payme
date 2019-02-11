@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class AddDataViewController: UIViewController {
+class DetailDataViewController: UIViewController {
 
     override func loadView() {
         super.loadView()
