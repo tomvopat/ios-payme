@@ -24,11 +24,11 @@ class DataDetailView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        let sumStack = createLabelTextField(labelText: "Sum")
-        let dateStack = createLabelTextField(labelText: "Date")
-        let companyStack = createLabelTextField(labelText: "Company")
-        let hoursStack = createLabelTextField(labelText: "Hours")
-        let priceStack = createLabelTextField(labelText: "Price per hour")
+        let sumStack = createLabelTextField(labelText: "Sum", editable: false)
+        let dateStack = createLabelTextField(labelText: "Date", editable: true)
+        let companyStack = createLabelTextField(labelText: "Company", editable: true)
+        let hoursStack = createLabelTextField(labelText: "Hours", editable: true)
+        let priceStack = createLabelTextField(labelText: "Price per hour", editable: true)
         let descriptionLabel = UILabel()
         descriptionLabel.text = "Description"
         let descriptionTextField = UITextField()
@@ -44,10 +44,11 @@ class DataDetailView: UIView {
         }
     }
 
-    func createLabelTextField(labelText: String) -> UIStackView {
+    func createLabelTextField(labelText: String, editable: Bool) -> UIStackView {
         let label = UILabel()
         label.text = labelText
         let textField = UITextField()
+        textField.isEnabled = editable
         let hStack = UIStackView(arrangedSubviews: [label, textField])
         hStack.axis = .horizontal
         return hStack
