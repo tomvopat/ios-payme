@@ -11,9 +11,7 @@ import Foundation
 struct DataDetailModel: Codable {
     var id: String?
     var time: Double
-    var companyId: String
     var numberOfHours: Double
     var pricePerHour: Double
-    var tags: [String]
     var description: String?
 }
