@@ -11,14 +11,21 @@ import UIKit
 
 class DataViewController: UIViewController {
 
+    var addButton: UIBarButtonItem!
+
     override func loadView() {
         super.loadView()
         view.backgroundColor = .green
+
+        let addButton = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(addButtonTapped(_:)))
+        navigationItem.rightBarButtonItem = addButton
+        self.addButton = addButton
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-
+    @objc private func addButtonTapped(_ sender: UIButton) {
+        let addView = AddDataViewController()
+        navigationController?.pushViewController(addView, animated: true)
     }
+
 }
+

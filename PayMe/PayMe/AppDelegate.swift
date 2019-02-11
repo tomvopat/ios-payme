@@ -20,14 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
 
         let summary = SummaryViewController()
-        let data = DataViewController()
-        let settings = SettingViewController()
         summary.tabBarItem.title = "Summary"
-        data.tabBarItem.title = "Data"
+
+        let dataViewController = DataViewController()
+        let dataNavigationController = UINavigationController(rootViewController: dataViewController)
+        dataNavigationController.tabBarItem.title = "Data"
+
+        let settings = SettingViewController()
         settings.tabBarItem.title = "Settings"
 
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [summary, data, settings]
+        tabBarController.viewControllers = [summary, dataNavigationController, settings]
 
         window?.rootViewController = tabBarController;
         window?.makeKeyAndVisible()
