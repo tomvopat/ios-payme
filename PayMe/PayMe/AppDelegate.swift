@@ -17,6 +17,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+
+        let summary = SummaryViewController()
+        let data = DataViewController()
+        let settings = SettingViewController()
+        summary.tabBarItem.title = "Summary"
+        data.tabBarItem.title = "Data"
+        settings.tabBarItem.title = "Settings"
+
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [summary, data, settings]
+
+        window?.rootViewController = tabBarController;
+        window?.makeKeyAndVisible()
+
         return true
     }
 

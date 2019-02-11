@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import SnapKit
 
-class ViewController: UIViewController {
+class SummaryViewController: UIViewController {
+
+    override func loadView() {
+        super.loadView()
+        view.backgroundColor = .red
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
 
+    }
 
 }
 
