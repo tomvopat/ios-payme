@@ -84,9 +84,9 @@
 		E9DF3B5922101D7B00C08077 /* PayMe */ = {
 			isa = PBXGroup;
 			children = (
-				E9E2F14C22118D100083D771 /* Controller */,
+				E9E2F1592211BCFE0083D771 /* View */,
 				E9E2F14B22118BC90083D771 /* Model */,
-				E9E2F14A22118BB90083D771 /* View */,
+				E9E2F14A22118BB90083D771 /* Controller */,
 				E9DF3B5A22101D7B00C08077 /* AppDelegate.swift */,
 				E9DF3B6422101D7E00C08077 /* Assets.xcassets */,
 				E9DF3B6622101D7E00C08077 /* LaunchScreen.storyboard */,
@@ -96,15 +96,14 @@
 			path = PayMe;
 			sourceTree = "<group>";
 		};
-		E9E2F14A22118BB90083D771 /* View */ = {
+		E9E2F14A22118BB90083D771 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E9E2F15C2211C10A0083D771 /* Data */,
 				E9DF3B5C22101D7B00C08077 /* SummaryViewController.swift */,
 				E9E2F14F2211917D0083D771 /* SettingsViewController.swift */,
-				E9E2F1552211B1570083D771 /* DataViewController.swift */,
-				E9E2F1572211B2090083D771 /* AddDataViewController.swift */,
 			);
-			path = View;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		E9E2F14B22118BC90083D771 /* Model */ = {
@@ -114,11 +113,20 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		E9E2F14C22118D100083D771 /* Controller */ = {
+		E9E2F1592211BCFE0083D771 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Controller;
+			path = View;
+			sourceTree = "<group>";
+		};
+		E9E2F15C2211C10A0083D771 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E9E2F1552211B1570083D771 /* DataViewController.swift */,
+				E9E2F1572211B2090083D771 /* AddDataViewController.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -21,13 +21,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let summary = SummaryViewController()
         summary.tabBarItem.title = "Summary"
+        summary.title = "Summary"
 
         let dataViewController = DataViewController()
         let dataNavigationController = UINavigationController(rootViewController: dataViewController)
         dataNavigationController.tabBarItem.title = "Data"
+        dataViewController.title = "Data"
 
         let settings = SettingViewController()
         settings.tabBarItem.title = "Settings"
+        settings.title = "Settings"
 
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [summary, dataNavigationController, settings]
