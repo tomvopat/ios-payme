@@ -25,6 +25,10 @@ class DataModel {
         }
     }
 
+    func removeData(key: String) {
+        data.removeValue(forKey: key)
+    }
+
     func get(key: String) -> DataDetailModel? {
         return data[key]
     }

@@ -69,6 +69,18 @@ class DataViewController: UITableViewController, DataDelegate {
         }
     }
 
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if let myData = data {
+            let exactData = myData.getAll()[indexPath.row]
+            myData.removeData(key: exactData.id!)
+        }
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
+
     private func openDetail(data: DataDetailModel) {
         let detailView = DetailDataViewController()
         detailView.delegate = self
