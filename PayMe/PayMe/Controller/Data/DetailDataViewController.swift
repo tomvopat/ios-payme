@@ -36,8 +36,24 @@ class DetailDataViewController: UIViewController {
 
     @objc private func editButtonTapped(_ sender: UIButton) {
         editingEnabled = !editingEnabled
-        detailView.enableTextFields(editingEnabled)
+        for textField in detailView.getAllTextFields() {
+            textField.isEnabled = editingEnabled
+        }
         print("editing: \(editingEnabled)")
+    }
+
+    func getText(from field: String) -> String? {
+        if let field = detailView.getTextField(name: field) {
+            return field.text
+        } else {
+            return nil
+        }
+    }
+
+    func setText(to field: String, text: String) {
+        if let field = detailView.getTextField(name: field) {
+            field.text = text
+        }
     }
 
 }

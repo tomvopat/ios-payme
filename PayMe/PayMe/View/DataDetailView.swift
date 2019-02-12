@@ -52,7 +52,7 @@ class DataDetailView: UIView {
         }
     }
 
-    func createLabelTextField(labelText: String, editable: Bool) -> (UIStackView, UITextField) {
+    private func createLabelTextField(labelText: String, editable: Bool) -> (UIStackView, UITextField) {
         let label = UILabel()
         label.text = labelText
         label.font = UIFont(name:"HelveticaNeue-Bold", size: 16)
@@ -64,12 +64,12 @@ class DataDetailView: UIView {
         return (hStack, textField)
     }
 
-    func enableTextFields(_ enable: Bool) {
-        for (name, field) in textFields {
-            if(name != "sum") {
-                field.isEnabled = enable
-            }
-        }
+    func getAllTextFields() -> [UITextField] {
+        return Array(textFields.values)
+    }
+
+    func getTextField(name: String) -> UITextField? {
+        return self.textFields[name]
     }
 
     required init?(coder aDecoder: NSCoder) {
