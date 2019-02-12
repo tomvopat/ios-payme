@@ -58,12 +58,21 @@ class DataViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Open details.")
+        if let myData = data {
+            let exactData = myData.getAll()[indexPath.row]
+            openDetail(data: exactData)
+        }
+    }
+
+    private func openDetail(data: DataDetailModel) {
+        let detailView = DetailDataViewController()
+        detailView.showData(data: data)
+        navigationController?.pushViewController(detailView, animated: true)
     }
 
     @objc private func addButtonTapped(_ sender: UIButton) {
-        let addView = DetailDataViewController()
-        navigationController?.pushViewController(addView, animated: true)
+        print("Create new data.")
+
     }
 
 }

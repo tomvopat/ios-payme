@@ -23,7 +23,12 @@ class DetailDataViewController: UIViewController {
         navigationItem.rightBarButtonItem = editButton
         self.editButton = editButton
 
-        let dataDetailView = DataDetailView()
+        let dataDetailView: DataDetailView
+        if self.detailView == nil {
+            dataDetailView  = DataDetailView()
+        } else {
+            dataDetailView = self.detailView
+        }
         view.addSubview(dataDetailView)
         dataDetailView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
@@ -40,6 +45,20 @@ class DetailDataViewController: UIViewController {
             textField.isEnabled = editingEnabled
         }
         print("editing: \(editingEnabled)")
+    }
+
+    func showData(data: DataDetailModel) {
+        if self.detailView == nil {
+            self.detailView = DataDetailView()
+        }
+        setText(to: "sum", text: String(data.sum))
+        setText(to: "date", text: String(data.date))
+        setText(to: "company", text: data.company)
+        setText(to: "hours", text: String(data.numberOfHours))
+        setText(to: "price", text: String(data.pricePerHour))
+        if let description = data.description {
+            setText(to: "description", text: description)
+        }
     }
 
     func getText(from field: String) -> String? {
