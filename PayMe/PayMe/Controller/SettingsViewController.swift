@@ -51,6 +51,10 @@ class SettingViewController: UIViewController {
         if let target = data?.target {
             targetField.text = String(target)
         }
+
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
+
         self.targetField = targetField
 
     }
@@ -61,6 +65,10 @@ class SettingViewController: UIViewController {
                 data?.updateTarget(newTarget: doubleInput)
             }
         }
+    }
+
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        self.targetField.resignFirstResponder()
     }
 
     override func viewDidLoad() {
