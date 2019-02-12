@@ -33,6 +33,15 @@ class DataModel {
             self?.data.removeValue(forKey: snapshot.key)
             self?.delegate?.dataChanged()
         }
+
+        databaseReference.observe(.childChanged) { [weak self] snapshot in
+            guard let value = snapshot.value else { return }
+
+            if let newItem = try? FirebaseDecoder().decode(DataDetailModel.self, from: value) {
+                self?.data[newItem.id!] = newItem
+            }
+            self?.delegate?.dataChanged()
+        }
     }
 
     func createNewDetail() -> DataDetailModel {

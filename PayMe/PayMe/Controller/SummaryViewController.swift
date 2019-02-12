@@ -24,7 +24,8 @@ class SummaryViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        view.backgroundColor = .red
+
+        
     }
 
     override func viewDidLoad() {
