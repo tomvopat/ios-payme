@@ -21,6 +21,7 @@
 		E9E2F1662212120A0083D771 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2F1652212120A0083D771 /* TextField.swift */; };
 		E9E2F1682212BB2A0083D771 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2F1672212BB2A0083D771 /* DataModel.swift */; };
 		E9E2F16C2212DB9F0083D771 /* DataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2F16B2212DB9F0083D771 /* DataDelegate.swift */; };
+		E9E2F16E2212F1650083D771 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9E2F16D2212F1640083D771 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		E9E2F1652212120A0083D771 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		E9E2F1672212BB2A0083D771 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		E9E2F16B2212DB9F0083D771 /* DataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDelegate.swift; sourceTree = "<group>"; };
+		E9E2F16D2212F1640083D771 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F99922CBF68E1163C8CE9A65 /* Pods-PayMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-PayMe/Pods-PayMe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +103,7 @@
 				E9DF3B6422101D7E00C08077 /* Assets.xcassets */,
 				E9DF3B6622101D7E00C08077 /* LaunchScreen.storyboard */,
 				E9DF3B6922101D7E00C08077 /* Info.plist */,
+				E9E2F16D2212F1640083D771 /* GoogleService-Info.plist */,
 				E9DF3B6122101D7B00C08077 /* PayMe.xcdatamodeld */,
 			);
 			path = PayMe;
@@ -206,6 +209,7 @@
 			files = (
 				E9DF3B6822101D7E00C08077 /* LaunchScreen.storyboard in Resources */,
 				E9DF3B6522101D7E00C08077 /* Assets.xcassets in Resources */,
+				E9E2F16E2212F1650083D771 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
