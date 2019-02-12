@@ -22,6 +22,9 @@ class DataModel {
     func addData(_ newData: DataDetailModel) {
         if let myId = newData.id {
             data[myId] = newData
+        } else {
+            // need to generate new ID
+            print("Saving failed")
         }
     }
 

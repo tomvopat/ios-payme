@@ -65,7 +65,7 @@ class DataViewController: UITableViewController, DataDelegate {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let myData = data {
             let exactData = myData.getAll()[indexPath.row]
-            openDetail(data: exactData)
+            openDetail(data: exactData, isNew: false)
         }
     }
 
@@ -81,16 +81,16 @@ class DataViewController: UITableViewController, DataDelegate {
         tableView.deleteRows(at: [indexPath], with: .automatic)
     }
 
-    private func openDetail(data: DataDetailModel) {
+    private func openDetail(data: DataDetailModel, isNew: Bool) {
         let detailView = DetailDataViewController()
         detailView.delegate = self
-        detailView.showData(data: data)
+        detailView.showData(data: data, editable: true)
         navigationController?.pushViewController(detailView, animated: true)
     }
 
     @objc private func addButtonTapped(_ sender: UIButton) {
-        print("Create new data.")
-
+        let newData = DataDetailModel()
+        openDetail(data: newData, isNew: true)
     }
 
 

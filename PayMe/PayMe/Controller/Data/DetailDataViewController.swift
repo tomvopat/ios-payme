@@ -40,11 +40,15 @@ class DetailDataViewController: UIViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
         self.detailView = dataDetailView
-
+        switchEditing(enabled: editingEnabled)
     }
 
     @objc private func editButtonTapped(_ sender: UIButton) {
-        editingEnabled = !editingEnabled
+        switchEditing(enabled: !editingEnabled)
+    }
+
+    private func switchEditing(enabled: Bool) {
+        editingEnabled = enabled
         for textField in detailView.getAllTextFields() {
             textField.isEnabled = editingEnabled
         }
@@ -63,12 +67,13 @@ class DetailDataViewController: UIViewController {
     }
 
     // Vloží data, která se budou zobrazovat
-    func showData(data: DataDetailModel) {
+    func showData(data: DataDetailModel, editable: Bool) {
         if self.detailView == nil {
             self.detailView = DataDetailView()
         }
         self.data = data
         updateView()
+        self.editingEnabled = editable
     }
 
     // Zobrazí vložená data
