@@ -75,7 +75,6 @@ class DetailDataViewController: UIViewController {
     func updateView() {
         if let newData = data {
             setText(to: "sum", text: String(newData.sum))
-            setText(to: "date", text: String(newData.date))
             setText(to: "company", text: newData.company)
             setText(to: "hours", text: String(newData.numberOfHours))
             setText(to: "price", text: String(newData.pricePerHour))
@@ -95,10 +94,6 @@ class DetailDataViewController: UIViewController {
     func updateData() {
         if data == nil {
             data = DataDetailModel()
-        }
-
-        if let text = getText(from: "date") {
-            data!.date = Double(text)!
         }
         if let text = getText(from: "company") {
             data!.company = text

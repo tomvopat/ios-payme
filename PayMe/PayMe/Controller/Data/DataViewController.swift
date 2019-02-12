@@ -57,7 +57,7 @@ class DataViewController: UITableViewController, DataDelegate {
         if let myData = data {
             let exactData = myData.getAll()[indexPath.row]
             cell!.textLabel?.text = String(exactData.sum)
-            cell!.detailTextLabel?.text = String(exactData.date)
+            cell!.detailTextLabel?.text = exactData.company
         }
         return cell!
     }

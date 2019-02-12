@@ -29,18 +29,16 @@ class DataDetailView: UIView {
 
         let sumStack = createLabelTextField(labelText: "Sum")
         textFields["sum"] = sumStack.1
-        let dateStack = createLabelTextField(labelText: "Date")
-        textFields["date"] = dateStack.1
         let companyStack = createLabelTextField(labelText: "Company")
         textFields["company"] = companyStack.1
         let hoursStack = createLabelTextField(labelText: "Hours")
-        textFields["hours"] = companyStack.1
+        textFields["hours"] = hoursStack.1
         let priceStack = createLabelTextField(labelText: "Price per hour")
         textFields["price"] = priceStack.1
         let descriptionStack = createLabelTextField(labelText: "Description")
         textFields["description"] = descriptionStack.1
 
-        let mainStack = UIStackView(arrangedSubviews: [sumStack.0, dateStack.0, companyStack.0, hoursStack.0, priceStack.0, descriptionStack.0])
+        let mainStack = UIStackView(arrangedSubviews: [sumStack.0, companyStack.0, hoursStack.0, priceStack.0, descriptionStack.0])
         mainStack.axis = .vertical
         mainStack.spacing = 20
         addSubview(mainStack)
