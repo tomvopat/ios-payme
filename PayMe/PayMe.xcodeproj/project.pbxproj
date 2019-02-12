@@ -22,6 +22,7 @@
 		E9E2F1682212BB2A0083D771 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2F1672212BB2A0083D771 /* DataModel.swift */; };
 		E9E2F16C2212DB9F0083D771 /* DataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2F16B2212DB9F0083D771 /* DataDelegate.swift */; };
 		E9E2F16E2212F1650083D771 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9E2F16D2212F1640083D771 /* GoogleService-Info.plist */; };
+		E9E2F172221305500083D771 /* ModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2F171221305500083D771 /* ModelDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		E9E2F1672212BB2A0083D771 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		E9E2F16B2212DB9F0083D771 /* DataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDelegate.swift; sourceTree = "<group>"; };
 		E9E2F16D2212F1640083D771 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E9E2F171221305500083D771 /* ModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDelegate.swift; sourceTree = "<group>"; };
 		F99922CBF68E1163C8CE9A65 /* Pods-PayMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-PayMe/Pods-PayMe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +145,7 @@
 				E9E2F1552211B1570083D771 /* DataViewController.swift */,
 				E9E2F1572211B2090083D771 /* DetailDataViewController.swift */,
 				E9E2F16B2212DB9F0083D771 /* DataDelegate.swift */,
+				E9E2F171221305500083D771 /* ModelDelegate.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				E9E2F1582211B2090083D771 /* DetailDataViewController.swift in Sources */,
 				E9E2F1662212120A0083D771 /* TextField.swift in Sources */,
 				E9E2F1502211917D0083D771 /* SettingsViewController.swift in Sources */,
+				E9E2F172221305500083D771 /* ModelDelegate.swift in Sources */,
 				E9E2F1622211D6260083D771 /* DataDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

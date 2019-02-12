@@ -12,7 +12,7 @@ struct DataDetailModel: Codable {
     var id: String?
     var sum: Double = 1000
     var company: String = "Hello"
-    var numberOfHours: Double = 1
+    var numberOfHours: Double = 10
     var pricePerHour: Double = 100
     var description: String?
 }

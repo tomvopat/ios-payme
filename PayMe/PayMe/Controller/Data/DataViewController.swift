@@ -9,12 +9,18 @@
 import SnapKit
 import UIKit
 
-class DataViewController: UITableViewController, DataDelegate {
+class DataViewController: UITableViewController, DataDelegate, ModelDelegate {
+
+    func dataChanged() {
+        tableView.reloadData()
+    }
 
     func saveData(newData: DataDetailModel) {
         data?.addData(newData)
         tableView.reloadData()
     }
+
+
 
     let data: DataModel?
 
@@ -24,6 +30,7 @@ class DataViewController: UITableViewController, DataDelegate {
     init(data: DataModel?) {
         self.data = data
         super.init(nibName: nil, bundle: nil)
+        data?.delegate = self
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -84,13 +91,15 @@ class DataViewController: UITableViewController, DataDelegate {
     private func openDetail(data: DataDetailModel, isNew: Bool) {
         let detailView = DetailDataViewController()
         detailView.delegate = self
-        detailView.showData(data: data, editable: true)
+        detailView.showData(data: data, editable: isNew)
         navigationController?.pushViewController(detailView, animated: true)
     }
 
     @objc private func addButtonTapped(_ sender: UIButton) {
-        let newData = DataDetailModel()
-        openDetail(data: newData, isNew: true)
+        let newData = data?.createNewDetail()
+        if let myData = newData {
+            openDetail(data: myData, isNew: true)
+        }
     }
 
 

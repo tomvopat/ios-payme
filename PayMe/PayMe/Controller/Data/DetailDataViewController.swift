@@ -98,7 +98,7 @@ class DetailDataViewController: UIViewController {
     // Uloží data z polí do objektu
     func updateData() {
         if data == nil {
-            data = DataDetailModel()
+            return
         }
         if let text = getText(from: "company") {
             data!.company = text
