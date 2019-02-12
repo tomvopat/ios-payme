@@ -20,6 +20,7 @@
 		E9E2F1622211D6260083D771 /* DataDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2F1612211D6260083D771 /* DataDetailView.swift */; };
 		E9E2F1662212120A0083D771 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2F1652212120A0083D771 /* TextField.swift */; };
 		E9E2F1682212BB2A0083D771 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2F1672212BB2A0083D771 /* DataModel.swift */; };
+		E9E2F16C2212DB9F0083D771 /* DataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2F16B2212DB9F0083D771 /* DataDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		E9E2F1612211D6260083D771 /* DataDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDetailView.swift; sourceTree = "<group>"; };
 		E9E2F1652212120A0083D771 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		E9E2F1672212BB2A0083D771 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		E9E2F16B2212DB9F0083D771 /* DataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDelegate.swift; sourceTree = "<group>"; };
 		F99922CBF68E1163C8CE9A65 /* Pods-PayMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-PayMe/Pods-PayMe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +139,7 @@
 			children = (
 				E9E2F1552211B1570083D771 /* DataViewController.swift */,
 				E9E2F1572211B2090083D771 /* DetailDataViewController.swift */,
+				E9E2F16B2212DB9F0083D771 /* DataDelegate.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				E9DF3B6322101D7B00C08077 /* PayMe.xcdatamodeld in Sources */,
 				E9DF3B5D22101D7B00C08077 /* SummaryViewController.swift in Sources */,
 				E9E2F1562211B1570083D771 /* DataViewController.swift in Sources */,
+				E9E2F16C2212DB9F0083D771 /* DataDelegate.swift in Sources */,
 				E9DF3B5B22101D7B00C08077 /* AppDelegate.swift in Sources */,
 				E9E2F1682212BB2A0083D771 /* DataModel.swift in Sources */,
 				E9E2F1582211B2090083D771 /* DetailDataViewController.swift in Sources */,

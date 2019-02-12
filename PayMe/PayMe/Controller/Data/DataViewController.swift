@@ -9,7 +9,11 @@
 import SnapKit
 import UIKit
 
-class DataViewController: UITableViewController {
+class DataViewController: UITableViewController, DataDelegate {
+
+    func saveData(newData: DataDetailModel) {
+        data?.addData(newData)
+    }
 
     let data: DataModel?
 
@@ -66,6 +70,7 @@ class DataViewController: UITableViewController {
 
     private func openDetail(data: DataDetailModel) {
         let detailView = DetailDataViewController()
+        detailView.delegate = self
         detailView.showData(data: data)
         navigationController?.pushViewController(detailView, animated: true)
     }
@@ -74,6 +79,8 @@ class DataViewController: UITableViewController {
         print("Create new data.")
 
     }
+
+
 
 }
 

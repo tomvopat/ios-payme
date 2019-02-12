@@ -9,19 +9,27 @@
 import Foundation
 
 class DataModel {
-    var data = [DataDetailModel]()
+    var data = [String: DataDetailModel]()
 
     init() {
-        for _ in 0..<100 {
-            data.append(DataDetailModel())
+        for i in 0..<100 {
+            var newData = DataDetailModel()
+            newData.id = String(i)
+            data[String(i)] = newData
         }
     }
 
     func addData(_ newData: DataDetailModel) {
-        data.append(newData)
+        if let myId = newData.id {
+            data[myId] = newData
+        }
+    }
+
+    func get(key: String) -> DataDetailModel? {
+        return data[key]
     }
 
     func getAll() -> [DataDetailModel] {
-        return data
+        return Array(data.values)
     }
 }

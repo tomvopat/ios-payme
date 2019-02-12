@@ -15,6 +15,9 @@ class DetailDataViewController: UIViewController {
     var detailView: DataDetailView!
     var editingEnabled: Bool = false
     var editButton: UIBarButtonItem!
+    var data: DataDetailModel?
+
+    var delegate: DataDelegate?
 
     override func loadView() {
         super.loadView()
@@ -37,6 +40,7 @@ class DetailDataViewController: UIViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
         self.detailView = dataDetailView
+
     }
 
     @objc private func editButtonTapped(_ sender: UIButton) {
@@ -44,23 +48,80 @@ class DetailDataViewController: UIViewController {
         for textField in detailView.getAllTextFields() {
             textField.isEnabled = editingEnabled
         }
-        print("editing: \(editingEnabled)")
+
+        if editingEnabled == true {
+            editButton.title = "Done"
+            editButton.style = .done
+        } else {
+            editButton.title = "Edit"
+            editButton.style = .plain
+            if validateData() {
+                updateData()
+                delegate?.saveData(newData: data!)
+            }
+        }
     }
 
+    // Vloží data, která se budou zobrazovat
     func showData(data: DataDetailModel) {
         if self.detailView == nil {
             self.detailView = DataDetailView()
         }
-        setText(to: "sum", text: String(data.sum))
-        setText(to: "date", text: String(data.date))
-        setText(to: "company", text: data.company)
-        setText(to: "hours", text: String(data.numberOfHours))
-        setText(to: "price", text: String(data.pricePerHour))
-        if let description = data.description {
-            setText(to: "description", text: description)
+        self.data = data
+        updateView()
+    }
+
+    // Zobrazí vložená data
+    func updateView() {
+        if let newData = data {
+            setText(to: "sum", text: String(newData.sum))
+            setText(to: "date", text: String(newData.date))
+            setText(to: "company", text: newData.company)
+            setText(to: "hours", text: String(newData.numberOfHours))
+            setText(to: "price", text: String(newData.pricePerHour))
+            if let description = newData.description {
+                setText(to: "description", text: description)
+            }
         }
     }
 
+    // Validace dat v polích
+    func validateData() -> Bool {
+        print("Validace dat")
+        return true
+    }
+
+    // Uloží data z polí do objektu
+    func updateData() {
+        if data == nil {
+            data = DataDetailModel()
+        }
+
+        if let text = getText(from: "date") {
+            data!.date = Double(text)!
+        }
+        if let text = getText(from: "company") {
+            data!.company = text
+        }
+        if let text = getText(from: "hours") {
+            data!.numberOfHours = Double(text)!
+        }
+        if let text = getText(from: "price") {
+            data!.pricePerHour = Double(text)!
+        }
+        if let text = getText(from: "sum") {
+            if let sum = Double(text) {
+                data!.sum = sum
+            } else {
+                data!.sum = data!.pricePerHour * data!.numberOfHours
+            }
+        }
+        if let text = getText(from: "description") {
+            data!.description = text
+        }
+    }
+
+    // Získá text z pole
     func getText(from field: String) -> String? {
         if let field = detailView.getTextField(name: field) {
             return field.text
@@ -69,6 +130,7 @@ class DetailDataViewController: UIViewController {
         }
     }
 
+    // Nastaví text v poli
     func setText(to field: String, text: String) {
         if let field = detailView.getTextField(name: field) {
             field.text = text
