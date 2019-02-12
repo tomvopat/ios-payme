@@ -16,6 +16,7 @@ class DataModel {
     var data = [String: DataDetailModel]()
     private var databaseReference: DatabaseReference!
     var delegate: ModelDelegate!
+    var summaryDelegate: SummaryDelegate!
 
     init() {
 
@@ -27,11 +28,13 @@ class DataModel {
                 self?.data[newItem.id!] = newItem
             }
             self?.delegate?.dataChanged()
+            self?.summaryDelegate?.dataChanged()
         }
 
         databaseReference.observe(.childRemoved) { [weak self] snapshot in
             self?.data.removeValue(forKey: snapshot.key)
             self?.delegate?.dataChanged()
+            self?.summaryDelegate?.dataChanged()
         }
 
         databaseReference.observe(.childChanged) { [weak self] snapshot in
@@ -41,6 +44,7 @@ class DataModel {
                 self?.data[newItem.id!] = newItem
             }
             self?.delegate?.dataChanged()
+            self?.summaryDelegate?.dataChanged()
         }
     }
 

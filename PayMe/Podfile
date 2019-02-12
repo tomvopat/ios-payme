@@ -9,4 +9,5 @@ target 'PayMe' do
   pod 'SnapKit', '~> 4.2'
   pod 'FirebaseDatabase', '~> 5.0'
   pod 'CodableFirebase', '~> 0.2'
+  pod 'Charts'
 end

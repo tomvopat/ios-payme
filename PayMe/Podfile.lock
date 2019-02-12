@@ -1,4 +1,7 @@
 PODS:
+  - Charts (3.2.1):
+    - Charts/Core (= 3.2.1)
+  - Charts/Core (3.2.1)
   - CodableFirebase (0.2.1)
   - FirebaseCore (5.1.5):
     - GoogleUtilities/Logger (~> 5.2)
@@ -12,12 +15,14 @@ PODS:
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
+  - Charts
   - CodableFirebase (~> 0.2)
   - FirebaseDatabase (~> 5.0)
   - SnapKit (~> 4.2)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Charts
     - CodableFirebase
     - FirebaseCore
     - FirebaseDatabase
@@ -26,6 +31,7 @@ SPEC REPOS:
     - SnapKit
 
 SPEC CHECKSUMS:
+  Charts: f122fb70b19847fa5817d018b77d6c5a2296ab25
   CodableFirebase: 0bf201991eeec35eb9fcd987d271ea463cf34a80
   FirebaseCore: c6079de64c1a87000e52e9b408dddcadc901177f
   FirebaseDatabase: e2bcbc106adc4b11a2da3ec2eb63c0c4a44f2f54
@@ -33,6 +39,6 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 4c8405d4a16100e4020983a3612a5000797fd030
+PODFILE CHECKSUM: 2a40b11787ef269085bb7fa766f7e9407667e69b
 
 COCOAPODS: 1.5.3

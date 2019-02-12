@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D81DC9E9233DBD274D6F89B7 /* Pods_PayMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5E2844993C5BAF6ED786C4 /* Pods_PayMe.framework */; };
+		E90CAA94221322FE002E3B4E /* SummaryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90CAA93221322FE002E3B4E /* SummaryDelegate.swift */; };
 		E9DF3B5B22101D7B00C08077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DF3B5A22101D7B00C08077 /* AppDelegate.swift */; };
 		E9DF3B5D22101D7B00C08077 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DF3B5C22101D7B00C08077 /* SummaryViewController.swift */; };
 		E9DF3B6322101D7B00C08077 /* PayMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9DF3B6122101D7B00C08077 /* PayMe.xcdatamodeld */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		79F8E7BE86BE32A396205960 /* Pods-PayMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PayMe/Pods-PayMe.debug.xcconfig"; sourceTree = "<group>"; };
 		DD5E2844993C5BAF6ED786C4 /* Pods_PayMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PayMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E90CAA93221322FE002E3B4E /* SummaryDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryDelegate.swift; sourceTree = "<group>"; };
 		E9DF3B5722101D7B00C08077 /* PayMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9DF3B5A22101D7B00C08077 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9DF3B5C22101D7B00C08077 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E90CAA92221322ED002E3B4E /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				E9DF3B5C22101D7B00C08077 /* SummaryViewController.swift */,
+				E90CAA93221322FE002E3B4E /* SummaryDelegate.swift */,
+			);
+			path = Summary;
+			sourceTree = "<group>";
+		};
 		E9DF3B4E22101D7B00C08077 = {
 			isa = PBXGroup;
 			children = (
@@ -116,8 +127,8 @@
 		E9E2F14A22118BB90083D771 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E90CAA92221322ED002E3B4E /* Summary */,
 				E9E2F15C2211C10A0083D771 /* Data */,
-				E9DF3B5C22101D7B00C08077 /* SummaryViewController.swift */,
 				E9E2F14F2211917D0083D771 /* SettingsViewController.swift */,
 			);
 			path = Controller;
@@ -253,6 +264,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PayMe/Pods-PayMe-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/CodableFirebase/CodableFirebase.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -262,6 +274,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CodableFirebase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -280,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9E2F1602211CA340083D771 /* DataDetailModel.swift in Sources */,
+				E90CAA94221322FE002E3B4E /* SummaryDelegate.swift in Sources */,
 				E9DF3B6322101D7B00C08077 /* PayMe.xcdatamodeld in Sources */,
 				E9DF3B5D22101D7B00C08077 /* SummaryViewController.swift in Sources */,
 				E9E2F1562211B1570083D771 /* DataViewController.swift in Sources */,
