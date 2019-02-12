@@ -97,11 +97,15 @@ class SummaryViewController: UIViewController, SummaryDelegate {
 
     }
 
-    func dataChanged() {
+    private func getAllData() -> [DataDetailModel] {
         if self.data == nil {
-            return
+            return [DataDetailModel]()
         }
-        let allData = self.data!.getAll()
+        return self.data!.getAll()
+    }
+
+    func dataChanged() {
+        let allData = getAllData()
 
         pieChartUpdate(allData)
         sumUpdate(allData)
@@ -109,8 +113,8 @@ class SummaryViewController: UIViewController, SummaryDelegate {
     }
 
     func targetChanged() {
-        //TODO
-        print("Target changed.")
+        let allData = getAllData()
+        pieChartUpdate(allData)
     }
 
     func sumUpdate(_ allData: [DataDetailModel]) {
@@ -132,7 +136,9 @@ class SummaryViewController: UIViewController, SummaryDelegate {
 
     func pieChartUpdate(_ allData: [DataDetailModel]) {
         var companyPrice = [String: Double]()
+        var sum: Double = 0
         for item in allData {
+            sum += item.sum
             let current = companyPrice[item.company]
             if current == nil {
                 companyPrice[item.company] = item.sum
@@ -145,6 +151,13 @@ class SummaryViewController: UIViewController, SummaryDelegate {
         for (company, price) in companyPrice {
             let entry = PieChartDataEntry(value: price, label: company)
             entries.append(entry)
+        }
+
+        if let target = self.data?.target {
+            if target > sum {
+                let newEntry = PieChartDataEntry(value: target - sum, label: "Left to target")
+                entries.append(newEntry)
+            }
         }
 
         let dataSet = PieChartDataSet(values: entries, label: "Companies")

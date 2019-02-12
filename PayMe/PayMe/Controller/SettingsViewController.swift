@@ -48,7 +48,9 @@ class SettingViewController: UIViewController {
             make.width.greaterThanOrEqualTo(150)
         }
         targetField.addTarget(self, action: #selector(targetChanged(_:)), for: .editingDidEnd)
-
+        if let target = data?.target {
+            targetField.text = String(target)
+        }
         self.targetField = targetField
 
     }
