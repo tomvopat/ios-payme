@@ -11,6 +11,17 @@ import UIKit
 
 class SettingViewController: UIViewController {
 
+    let data: DataModel?
+
+    init(data: DataModel?) {
+        self.data = data
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         super.loadView()
         view.backgroundColor = .blue

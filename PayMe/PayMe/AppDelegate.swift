@@ -19,16 +19,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
 
-        let summary = SummaryViewController()
+        let data = DataModel()
+
+        let summary = SummaryViewController(data: data)
         summary.tabBarItem.title = "Summary"
         summary.title = "Summary"
 
-        let dataViewController = DataViewController()
+        let dataViewController = DataViewController(data: data)
         let dataNavigationController = UINavigationController(rootViewController: dataViewController)
         dataNavigationController.tabBarItem.title = "Data"
         dataViewController.title = "Data"
 
-        let settings = SettingViewController()
+        let settings = SettingViewController(data: data)
         settings.tabBarItem.title = "Settings"
         settings.title = "Settings"
 

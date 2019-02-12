@@ -13,10 +13,15 @@ import SnapKit
 class DetailDataViewController: UIViewController {
 
     var detailView: DataDetailView!
+    var editingEnabled: Bool = false
+    var editButton: UIBarButtonItem!
 
     override func loadView() {
         super.loadView()
-        view.backgroundColor = .yellow
+
+        let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonTapped(_:)))
+        navigationItem.rightBarButtonItem = editButton
+        self.editButton = editButton
 
         let dataDetailView = DataDetailView()
         view.addSubview(dataDetailView)
@@ -27,6 +32,12 @@ class DetailDataViewController: UIViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
         self.detailView = dataDetailView
+    }
+
+    @objc private func editButtonTapped(_ sender: UIButton) {
+        editingEnabled = !editingEnabled
+        detailView.enableTextFields(editingEnabled)
+        print("editing: \(editingEnabled)")
     }
 
 }

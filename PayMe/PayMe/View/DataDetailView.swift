@@ -20,38 +20,56 @@ class DataDetailView: UIView {
     */
 
     var mainStack: UIStackView!
+    var textFields = [String: UITextField]()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        let sumStack = createLabelTextField(labelText: "Sum", editable: false)
-        let dateStack = createLabelTextField(labelText: "Date", editable: true)
-        let companyStack = createLabelTextField(labelText: "Company", editable: true)
-        let hoursStack = createLabelTextField(labelText: "Hours", editable: true)
-        let priceStack = createLabelTextField(labelText: "Price per hour", editable: true)
-        let descriptionLabel = UILabel()
-        descriptionLabel.text = "Description"
-        let descriptionTextField = UITextField()
+        backgroundColor = .white
 
-        let mainStack = UIStackView(arrangedSubviews: [sumStack, dateStack, companyStack, hoursStack, priceStack, descriptionLabel, descriptionTextField])
+        let sumStack = createLabelTextField(labelText: "Sum", editable: false)
+        textFields["sum"] = sumStack.1
+        let dateStack = createLabelTextField(labelText: "Date", editable: true)
+        textFields["date"] = dateStack.1
+        let companyStack = createLabelTextField(labelText: "Company", editable: true)
+        textFields["company"] = companyStack.1
+        let hoursStack = createLabelTextField(labelText: "Hours", editable: true)
+        textFields["hours"] = companyStack.1
+        let priceStack = createLabelTextField(labelText: "Price per hour", editable: true)
+        textFields["price"] = priceStack.1
+        let descriptionStack = createLabelTextField(labelText: "Description", editable: true)
+        textFields["description"] = descriptionStack.1
+
+        let mainStack = UIStackView(arrangedSubviews: [sumStack.0, dateStack.0, companyStack.0, hoursStack.0, priceStack.0, descriptionStack.0])
         mainStack.axis = .vertical
-        mainStack.spacing = 15
+        mainStack.spacing = 20
         addSubview(mainStack)
         self.mainStack = mainStack
 
         mainStack.snp.makeConstraints{ make in
-            make.leading.top.trailing.equalToSuperview()
+            make.leading.top.equalToSuperview().offset(10)
+            make.trailing.equalToSuperview().offset(-10)
         }
     }
 
-    func createLabelTextField(labelText: String, editable: Bool) -> UIStackView {
+    func createLabelTextField(labelText: String, editable: Bool) -> (UIStackView, UITextField) {
         let label = UILabel()
         label.text = labelText
-        let textField = UITextField()
+        label.font = UIFont(name:"HelveticaNeue-Bold", size: 16)
+        let textField = TextField(frame: CGRect(x: 0, y: 0, width: 150, height: 25))
         textField.isEnabled = editable
         let hStack = UIStackView(arrangedSubviews: [label, textField])
-        hStack.axis = .horizontal
-        return hStack
+        hStack.axis = .vertical
+        hStack.spacing = 5
+        return (hStack, textField)
+    }
+
+    func enableTextFields(_ enable: Bool) {
+        for (name, field) in textFields {
+            if(name != "sum") {
+                field.isEnabled = enable
+            }
+        }
     }
 
     required init?(coder aDecoder: NSCoder) {

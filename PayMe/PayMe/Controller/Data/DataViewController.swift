@@ -11,10 +11,21 @@ import UIKit
 
 class DataViewController: UITableViewController {
 
+    let data: DataModel?
+
     var addButton: UIBarButtonItem!
     var editButton: UIBarButtonItem!
     let cellIdentifier = "cellIdentifier"
 
+    init(data: DataModel?) {
+        self.data = data
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         super.loadView()
 
