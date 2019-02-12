@@ -55,7 +55,7 @@ class SummaryViewController: UIViewController, SummaryDelegate {
 
         let sumLabel = UILabel()
         sumLabel.font = UIFont(name: "Helvetica-Bold", size: 25)
-        sumLabel.text = "Sum"
+        sumLabel.text = "Sum is missing 😢"
         view.addSubview(sumLabel)
         sumLabel.snp.makeConstraints { make in
             make.top.equalTo(hLine.snp.bottom).offset(10)
@@ -74,7 +74,7 @@ class SummaryViewController: UIViewController, SummaryDelegate {
 
         let lastLabel = UILabel()
         lastLabel.font = UIFont(name: "Helvetica-Bold", size: 17)
-        lastLabel.text = "Last"
+        lastLabel.text = "Last:"
 
         let lastItemLabel = UILabel()
         lastItemLabel.font = UIFont(name: "Helvetica", size: 17)
@@ -106,6 +106,11 @@ class SummaryViewController: UIViewController, SummaryDelegate {
         pieChartUpdate(allData)
         sumUpdate(allData)
         lastUpdate(allData)
+    }
+
+    func targetChanged() {
+        //TODO
+        print("Target changed.")
     }
 
     func sumUpdate(_ allData: [DataDetailModel]) {

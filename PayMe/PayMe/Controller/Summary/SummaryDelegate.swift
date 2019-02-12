@@ -10,4 +10,5 @@ import Foundation
 
 protocol SummaryDelegate {
     func dataChanged()
+    func targetChanged()
 }

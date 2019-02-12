@@ -12,7 +12,7 @@ import CodableFirebase
 
 class DataModel {
 
-
+    var target: Double = 0
     var data = [String: DataDetailModel]()
     private var databaseReference: DatabaseReference!
     var delegate: ModelDelegate!
@@ -80,5 +80,10 @@ class DataModel {
 
     func getAll() -> [DataDetailModel] {
         return Array(data.values)
+    }
+
+    func updateTarget(newTarget: Double) {
+        self.target = newTarget
+        summaryDelegate?.targetChanged()
     }
 }
