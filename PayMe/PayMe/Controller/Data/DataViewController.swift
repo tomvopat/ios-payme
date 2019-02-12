@@ -14,7 +14,6 @@ class DataViewController: UITableViewController {
     let data: DataModel?
 
     var addButton: UIBarButtonItem!
-    var editButton: UIBarButtonItem!
     let cellIdentifier = "cellIdentifier"
 
     init(data: DataModel?) {
@@ -30,11 +29,8 @@ class DataViewController: UITableViewController {
         super.loadView()
 
         let addButton = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(addButtonTapped(_:)))
-        let editButton = UIBarButtonItem(title: "edit", style: .plain, target: self, action: #selector(editButtonTapped(_:)))
         navigationItem.rightBarButtonItem = addButton
-        navigationItem.leftBarButtonItem = editButton
         self.addButton = addButton
-        self.editButton = editButton
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -62,10 +58,6 @@ class DataViewController: UITableViewController {
     @objc private func addButtonTapped(_ sender: UIButton) {
         let addView = DetailDataViewController()
         navigationController?.pushViewController(addView, animated: true)
-    }
-
-    @objc private func editButtonTapped(_ sender: UIButton) {
-        print("Edit items.")
     }
 
     let contacts:[[String]] = [
