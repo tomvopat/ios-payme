@@ -13,6 +13,7 @@ class DataViewController: UITableViewController, DataDelegate {
 
     func saveData(newData: DataDetailModel) {
         data?.addData(newData)
+        tableView.reloadData()
     }
 
     let data: DataModel?
