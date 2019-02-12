@@ -10,7 +10,8 @@ import Foundation
 
 struct DataDetailModel: Codable {
     var id: String?
-    var time: Double = 12
+    var sum: Double = 1000
+    var date: Double = 12
     var company: String = "Hello"
     var numberOfHours: Double = 1
     var pricePerHour: Double = 100
